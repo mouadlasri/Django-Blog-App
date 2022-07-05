@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>New post</h1>
+    <form action="" method="POST"> {% csrf_token %}
+        <!--  
+            to output our form data we use {{ form.as_p }} which renders it within paragraph
+            <p> tags 
+        -->
+        {{ form.as_p }}
+        <input type="submit", value="Save">
+    </form>
+{% endblock content %}
