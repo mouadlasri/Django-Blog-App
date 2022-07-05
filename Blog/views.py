@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView # new
+from django.views.generic.edit import CreateView, UpdateView # new
 from .models import Post
 
 # Create your views here.
@@ -21,3 +21,8 @@ class BlogCreateView(CreateView):
     template_name = 'post_new.html'
     #. For fields we explicitly set the database fields we want to expose which are title, author, and body.
     fields = ['title', 'author', 'body']
+
+class BlogUpdateView(UpdateView): # new 
+    model = Post
+    template_name = 'post_edit.html'
+    fields = ['title', 'body']
